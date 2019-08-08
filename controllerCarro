@@ -1,0 +1,22 @@
+<?php
+	include_once("classeCarro.php");
+	$objetoCarro = new carro();
+	if(filter_input(INPUT_POST, "modelo") &&
+	   filter_input(INPUT_POST, "valor") &&
+		filter_input(INPUT_POST, "cor") &&
+		filter_input(INPUT_POST, "ano") &&
+		filter_input(INPUT_POST, "IPVA/pago")
+
+	) {
+		$nome = filter_input(INPUT_POST, "modelo");
+		$telefone = filter_input(INPUT_POST, "valor");
+		$celular = filter_input(INPUT_POST, "cor");
+		$email = filter_input(INPUT_POST, "ano");
+		$endereco = filter_input(INPUT_POST, "IPVA/pago");
+			
+		$dados=array($modelo, $valor, $cor, $ano, $ipva)
+		$objetoCarro->cadastrar($dados);
+	}else {
+		echo "Os campos não foram preenchidos!!!";	
+	}
+?>
